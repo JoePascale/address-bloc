@@ -44,6 +44,7 @@ class MenuController
             when 6
             system "clear"
             ask_for_entry
+            main_menu
             else
             system "clear"
             puts "Sorry, that is not a valid input"
@@ -119,10 +120,12 @@ class MenuController
        
        selection = gets.chomp.to_i
        
-       if selection < address_book.entries.length
-           address_book.entries[selection - 1]
-       else
+       if selection < address_book.entries.count
+           puts address_book.entries[selection]
+           puts "Press Enter to return to the main menu"
+           gets.chomp
            system "clear"
+       else
            puts "#{selection} is not a valid entry number"
            main_menu
        end
