@@ -15,6 +15,7 @@ class MenuController
         puts "3 - Search for an entry"
         puts "4 - Import entries from a CSV"
         puts "5 - Exit"
+        puts "6 - Demolish all entries"
         print "Enter your selection: "
 
 
@@ -40,6 +41,11 @@ class MenuController
             when 5
             puts "Good-bye!"
             exit(0)
+            when 6
+            system "clear"
+            book.demolish
+            puts "All Address Book entries have been deleted!"
+            main_menu
             else
             system "clear"
             puts "Sorry, that is not a valid input"
@@ -193,5 +199,6 @@ class MenuController
           search_submenu(entry)
         end
       end
+    end
 
 end

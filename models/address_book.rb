@@ -5,7 +5,11 @@ class AddressBook
     attr_reader :entries
 
     def initialize
-        @entries = []
+      @entries = []
+    end
+
+    def demolish
+      @entries = []
     end
 
     def add_entry(name, phone_number, email)
@@ -50,7 +54,7 @@ class AddressBook
           lower = mid + 1
         end
       end
- 
+
       return nil
     end
 end
